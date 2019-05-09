@@ -1,0 +1,12 @@
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\Model1.dll.config
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\Model1.dll
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\Model1.pdb
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\EntityFramework.dll
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\EntityFramework.SqlServer.dll
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\EntityFramework.xml
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\EntityFramework.SqlServer.xml
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model.csprojAssemblyReference.cache
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model.csproj.CopyComplete
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model1.dll
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model1.pdb
