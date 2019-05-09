@@ -20,10 +20,28 @@ namespace Model1.Dao
             db.SaveChanges();
             return user.ID;
         }
-        public bool Login(string userName, string passWord)
+        public int Login(string userName, string passWord)
         {
-            var result = db.Users.Count(x => x.Username == userName && x.Password == passWord);
-            return (result > 0);
+            var result = db.Users.FirstOrDefault(x => x.Username == userName);
+            if (result!=null)
+            {
+                if (result.Status==false)
+                {
+                    return -1;
+                }
+                else
+                {
+                    if (result.Password==passWord)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return -2;
+                    }
+                }
+            }
+            return 0;
             
         }
         public User GetByUserName(string userName)
