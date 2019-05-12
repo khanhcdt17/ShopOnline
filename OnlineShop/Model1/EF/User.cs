@@ -46,5 +46,7 @@
 
         [Display(Name = "Trạng thái")]
         public bool Status { get; set; }
+        
+      
     }
 }

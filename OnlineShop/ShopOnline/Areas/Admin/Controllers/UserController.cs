@@ -13,7 +13,7 @@ namespace ShopOnline.Areas.Admin.Controllers
     public class UserController : Controller
     {
         // GET: Admin/User
-        public ActionResult Index(int page=1,int pageSize=10)
+        public ActionResult Index(int page = 1, int pageSize = 10)
         {
             var dao = new UserDao();
             var model = dao.ListAllPaging(page, pageSize);
@@ -24,6 +24,12 @@ namespace ShopOnline.Areas.Admin.Controllers
         {
             return View();
         }
+        public ActionResult Edit(int id)
+        {
+            var user = new UserDao().GetByID(id);
+
+            return View(user);
+        }
         [HttpPost]
         public ActionResult Create(User user)
         {
@@ -33,20 +39,53 @@ namespace ShopOnline.Areas.Admin.Controllers
                 var passWordMd5 = Encryptor.MD5(user.Password);
                 user.Password = passWordMd5;
                 long id = dao.Insert(user);
-                if (id>0)
+                if (id > 0)
                 {
                     return RedirectToAction("Index", "User");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thêm user thành công");
+                    ModelState.AddModelError("", "Thêm thất bại");
                 }
 
             }
+            
+            return View("Index");
+        }
+        [HttpPost]
+        public ActionResult Edit( User user)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new UserDao();
+                if (!string.IsNullOrEmpty(user.Password))
+                {
+                    var passWordMd5 = Encryptor.MD5(user.Password);
+                    user.Password = passWordMd5;
+                    var result = dao.Update(user);
+                    if (result)
+                    {
+                        return RedirectToAction("Index", "User");
+                    }
+                }
+
+                ModelState.AddModelError("", "Cập nhập thất bại");
+
+            }
+            
+            return View("Edit");
+        }
 
         
-            
-            return View("Create");
+        [HttpDelete]
+        public ActionResult Delete (int id)
+        {
+            var user = new UserDao().Delete(id);
+            if (!user)
+            {
+                ModelState.AddModelError("", "Cập nhập thất bại");
+            }
+            return RedirectToAction("Index");
         }
     }
 }
