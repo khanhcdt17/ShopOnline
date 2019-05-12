@@ -1,4 +1,4 @@
-namespace Model1.EF
+﻿namespace Model1.EF
 {
     using System;
     using System.Collections.Generic;
@@ -11,21 +11,27 @@ namespace Model1.EF
         public long ID { get; set; }
 
         [StringLength(50)]
+        [Display(Name="Tên đăng nhập")]
         public string Username { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
         [StringLength(250)]
+        [Display(Name = "Tên")]
         public string Name { get; set; }
 
         [StringLength(250)]
+        [Display(Name = "Địa chỉ")]
         public string Address { get; set; }
 
         [StringLength(250)]
+        
         public string Email { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Điện thoại")]
         public string Phone { get; set; }
 
         public DateTime? CreatedDate { get; set; }
@@ -38,6 +44,7 @@ namespace Model1.EF
         [StringLength(50)]
         public string ModifiedBy { get; set; }
 
-        public bool? Status { get; set; }
+        [Display(Name = "Trạng thái")]
+        public bool Status { get; set; }
     }
 }

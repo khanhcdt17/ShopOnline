@@ -1,4 +1,5 @@
 ﻿using Model1.EF;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,10 @@ namespace Model1.Dao
             }
             return 0;
             
+        }
+        public IEnumerable<User> ListAllPaging(int page,int pageSize)
+        {
+            return db.Users.OrderByDescending(x=>x.CreatedDate).ToPagedList(page,pageSize);
         }
         public User GetByUserName(string userName)
         {

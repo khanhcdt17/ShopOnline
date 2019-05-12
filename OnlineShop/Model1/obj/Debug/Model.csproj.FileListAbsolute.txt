@@ -3,8 +3,12 @@ E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\Model1.pdb
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\EntityFramework.dll
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\EntityFramework.SqlServer.dll
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\PagedList.dll
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\PagedList.Mvc.dll
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\EntityFramework.xml
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\EntityFramework.SqlServer.xml
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\PagedList.xml
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\PagedList.Mvc.xml
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model.csprojAssemblyReference.cache
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model.csproj.CoreCompileInputs.cache
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model.csproj.CopyComplete
