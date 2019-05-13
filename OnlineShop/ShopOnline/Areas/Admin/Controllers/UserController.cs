@@ -49,36 +49,37 @@ namespace ShopOnline.Areas.Admin.Controllers
                 }
 
             }
-            
+
             return View("Index");
         }
         [HttpPost]
-        public ActionResult Edit( User user)
+        public ActionResult Edit(bool RsPW, User user)
         {
             if (ModelState.IsValid)
             {
                 var dao = new UserDao();
-                if (!string.IsNullOrEmpty(user.Password))
+                if (RsPW)
                 {
-                    var passWordMd5 = Encryptor.MD5(user.Password);
+                    var passWordMd5 = Encryptor.MD5("123456");
                     user.Password = passWordMd5;
-                    var result = dao.Update(user);
-                    if (result)
-                    {
-                        return RedirectToAction("Index", "User");
-                    }
                 }
+                var result = dao.Update(user);
+                if (result)
+                {
+                    return RedirectToAction("Index", "User");
+                }
+
 
                 ModelState.AddModelError("", "Cập nhập thất bại");
 
             }
-            
+
             return View("Edit");
         }
 
-        
+
         [HttpDelete]
-        public ActionResult Delete (int id)
+        public ActionResult Delete(int id)
         {
             var user = new UserDao().Delete(id);
             if (!user)

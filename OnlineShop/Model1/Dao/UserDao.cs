@@ -43,7 +43,7 @@ namespace Model1.Dao
 
                 return false;
             }
-            
+
         }
         public User GetByID(int id)
         {
@@ -52,30 +52,35 @@ namespace Model1.Dao
         public int Login(string userName, string passWord)
         {
             var result = db.Users.FirstOrDefault(x => x.Username == userName);
-            if (result!=null)
+            if (result != null)
             {
-                if (result.Status==false)
+                if (result.Status == false)
                 {
+                    //Tài khoản bị khóa
                     return -1;
                 }
                 else
                 {
-                    if (result.Password==passWord)
+
+                    if (result.Password == passWord)
                     {
+                        //đúng tên đăng nhập và mật khẩu
                         return 1;
                     }
                     else
                     {
+                        // sai tên đăng nhập hoặc mật khẩu
                         return -2;
                     }
                 }
             }
+            // sai tên đăng nhập
             return 0;
-            
+
         }
-        public IEnumerable<User> ListAllPaging(int page,int pageSize)
+        public IEnumerable<User> ListAllPaging(int page, int pageSize)
         {
-            return db.Users.OrderByDescending(x=>x.CreatedDate).ToPagedList(page,pageSize);
+            return db.Users.OrderByDescending(x => x.CreatedDate).ToPagedList(page, pageSize);
         }
         public User GetByUserName(string userName)
         {
