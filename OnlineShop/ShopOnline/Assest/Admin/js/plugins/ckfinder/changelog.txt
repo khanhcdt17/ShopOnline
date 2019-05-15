@@ -3,8 +3,6 @@ CKFinder Changelog
 http://cksource.com/ckfinder
 Copyright (C) 2007-2015, CKSource - Frederico Knabben. All rights reserved.
 
-### Version 2.6.2.1
-- Fixed issues with remembering last used folder and user settings not being saved.
 
 ### Version 2.6.2
 - Fixed issues with HTML5 upload in popup mode on IE.
@@ -28,6 +26,7 @@ Security release:
 - Reworked CKEditor 4.x integration sample - added an example on how to support drag&drop file uploads and pasting images from clipboard.
 
 ### Version 2.5.0.1
+[ASP.NET] - Security release, updating is highly recommended. Authenticated users could download any file from the server if the correct path to a file was provided.
 
 ### Version 2.5
 - Fixed: Opening settings panel after opening/closing flashupload panel caused exception being thrown.
@@ -56,6 +55,7 @@ Security release:
 
 ### Version 2.4.1
 Updated copyrights, fixed URLs inside source code, other minor fixes.
+[ASP.NET] - Fixed: CKFinder did not return proper information about child folders of resource type when ACL was set.
 
 ### Version 2.4
 - Added Search box in the toolbar that performs search of those files matching the searched string in the current folder.
@@ -70,11 +70,9 @@ Updated copyrights, fixed URLs inside source code, other minor fixes.
 - Fixed: CKFinderAPI.disableFolderContextMenuOption() did not work for "createSubFolder"/"renameFolder" items.
 - Fixed: In some cases, and empty (undefined) error message was shown to the user when an error occured.
 - Updated colorbox library used by the gallery plugin to the latest version, compatible with latest versions of jQuery.
-[ASP] - Compatibility with 64bit version of Persits dll. Thanks to Demian.
-[ASP] - ImageResize plugin was broken.
+[ASP.NET] - Fixed: IE sends full Path instead of just uploaded file name when in intranet.
 
 ### Version 2.3.1.1
-[ASP] - Removed code in the configuration file that was including a missing zip plugin, causing an error.
 
 ### Version 2.3.1
 Security Release:
@@ -85,7 +83,7 @@ It was possible to cause Denial of Service to files and folders on certain serve
 - Folders that start with a dot character are now disallowed by default.
 - Fixed auto-renaming of files with multiple extensions: foo.tar.gz will be renamed to foo(1).tar.gz on second upload.
 - Maximize did not work when CKFinder was added with appendTo()
-[ASP] - Avoid infinite loop if the configuration for thumbnails is removed instead of disabled.
+[ASP.NET] - Introduced CheckDoubleExtension configuration option.
 
 ### Version 2.3
 - Added the new Maximize plugin.
@@ -115,8 +113,9 @@ It was possible to cause Denial of Service to files and folders on certain serve
 - Fixed: Layout may appear broken after upload.
 - Fixed: IE 10: Compatibility with latest beta version.
 - Fixed: Thumbnails were left in the old location when files were moved.
-[ASP] - Fixed: Space character was wrongly encoded when uploading a file using quick uploads.
-[ASP] - Fixed: Avoid error if Sessions are disabled at IIS.
+[ASP.NET] - Fixed: SelectFunctionData and SelectThumbnailFunctionData properties were not available.
+[ASP.NET] - Fixed: Corrected the ASP.NET source code folder structure for included plugins.
+[ASP.NET] - Fixed: ArrayIndexOutOfBounds was sometimes thrown when file was uploaded.
 
 ### Version 2.2.2
 - Fixed: The new Chrome 20 is again causing issues with finder.popup(). The new fix should work for all future versions of Chrome.
@@ -147,7 +146,6 @@ Security Release: fixed filtering of unsafe characters for IIS6 web server.
 - Fixed: IE8: Selecting a file requires a double click instead of a single one.
 - Fixed High Contrast mode detection.
 - Fixed: Flash uploader is unable to deal with unexpected errors.
-[ASP] - Fixed: Always sort folders instead of rely on default sorting by the OS.
 
 ### Version 2.1.1
 - Sorting by file extension is now available.
@@ -170,8 +168,6 @@ Security Release: fixed filtering of unsafe characters for IIS6 web server.
 - Fixed: [IE, Chrome] Focus is lost after closing a dialog window.
 - Fixed: The startupPath option did not work.
 - Fixed: Unable to use CKFinder inside modal dialogs due to inability to properly destroy the previous instance.
-[ASP] - Windows Authentication support: the server must be configured to forward the credentials: http://docs.cksource.com/CKFinder_2.x/Developers_Guide/ASP/Troubleshooting/Windows_Authentication
-[ASP] - Fixed: Return correct MIME type for jpg images.
 
 ### Version 2.1
 - Added support for multiple uploads using the Flash component.
@@ -199,6 +195,8 @@ Security Release: fixed filtering of unsafe characters for IIS6 web server.
 - Fixed: CKFinder was sometimes throwing an "Object doesn't support this property or method" error in Internet Explorer.
 - Fixed: Thumbnails were not created if a folder or file name contains a single quote character.
 - Fixed: Disable upload button for iOS.
+[ASP.NET]- Fixed: Incompatibility with FIPS-compliant servers.
+[ASP.NET]- Fixed: Out of memory error when creating thumbnails.
 
 ### Version 2.0.2
 - Added a way to programmatically close a popup window: closePopup().
@@ -238,7 +236,8 @@ Security Release: fixed filtering of unsafe characters for IIS6 web server.
 - Fixed: context menu in Firefox on a Mac does not work.
 - Fixed: changing file extension caused issues with renaming file for the second time.
 - Fixed issue with caching thumbnails.
-[ASP] - Debug mode was not working.
+[ASP_NET] - Fixed: AfterFileUpload event was not available in ASP.NET
+[ASP_NET] - Fixed session dependency bug (CKFinder will now work fine when session state is not enabled).
 
 ### Version 2.0
 - First public release of 2.x version of CKFinder.
