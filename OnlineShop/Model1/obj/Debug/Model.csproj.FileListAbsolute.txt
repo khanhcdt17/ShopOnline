@@ -13,3 +13,4 @@ E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model.csproj.CopyComplete
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model1.dll
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model1.pdb
+E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model.csprojAssemblyReference.cache
