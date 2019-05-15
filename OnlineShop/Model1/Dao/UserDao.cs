@@ -33,6 +33,7 @@ namespace Model1.Dao
                 user.Name = entity.Name;
                 user.Address = entity.Address;
                 user.Email = entity.Email;
+                user.Phone = entity.Phone;
                 user.ModifiedBy = entity.ModifiedBy;
                 user.ModifiedDate = entity.ModifiedDate;
                 db.SaveChanges();
@@ -78,9 +79,14 @@ namespace Model1.Dao
             return 0;
 
         }
-        public IEnumerable<User> ListAllPaging(int page, int pageSize)
+        public IEnumerable<User> ListAllPaging(string searchString,int page, int pageSize)
         {
-            return db.Users.OrderByDescending(x => x.CreatedDate).ToPagedList(page, pageSize);
+            
+            if (string.IsNullOrEmpty(searchString))
+            {
+                return db.Users.OrderByDescending(x => x.CreatedDate).OrderBy(x => x.ID).ToPagedList(page, pageSize);
+            }
+            return db.Users.Where(x => x.Username.Contains(searchString) || x.Name.Contains(searchString)).OrderBy(x=>x.ID).ToPagedList(page, pageSize);
         }
         public User GetByUserName(string userName)
         {

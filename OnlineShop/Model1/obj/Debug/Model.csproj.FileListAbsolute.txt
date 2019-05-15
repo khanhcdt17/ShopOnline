@@ -9,7 +9,6 @@ E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\EntityFramework.SqlServer.xml
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\PagedList.xml
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\bin\Debug\PagedList.Mvc.xml
-E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model.csprojAssemblyReference.cache
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model.csproj.CoreCompileInputs.cache
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model.csproj.CopyComplete
 E:\Studies\LapTrinhWebNangCao\Learning\Back-end\ShopOnline\OnlineShop\Model1\obj\Debug\Model1.dll

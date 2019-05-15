@@ -13,10 +13,11 @@ namespace ShopOnline.Areas.Admin.Controllers
     public class UserController : Controller
     {
         // GET: Admin/User
-        public ActionResult Index(int page = 1, int pageSize = 10)
+        public ActionResult Index(string searchString,int page = 1, int pageSize = 10)
         {
+            ViewBag.searchString = searchString;
             var dao = new UserDao();
-            var model = dao.ListAllPaging(page, pageSize);
+            var model = dao.ListAllPaging(searchString, page, pageSize);
             return View(model);
         }
         [HttpGet]
@@ -24,12 +25,7 @@ namespace ShopOnline.Areas.Admin.Controllers
         {
             return View();
         }
-        public ActionResult Edit(int id)
-        {
-            var user = new UserDao().GetByID(id);
-
-            return View(user);
-        }
+        
         [HttpPost]
         public ActionResult Create(User user)
         {
@@ -51,6 +47,12 @@ namespace ShopOnline.Areas.Admin.Controllers
             }
 
             return View("Index");
+        }
+        public ActionResult Edit(int id)
+        {
+            var user = new UserDao().GetByID(id);
+
+            return View(user);
         }
         [HttpPost]
         public ActionResult Edit(bool RsPW, User user)
