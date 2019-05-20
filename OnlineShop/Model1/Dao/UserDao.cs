@@ -15,6 +15,13 @@ namespace Model1.Dao
         {
             db = new OnlineShopDbContext();
         }
+        public bool ChangeStatus(long id)
+        {
+            var user = db.Users.Find(id);
+            user.Status = !user.Status;
+            db.SaveChanges();
+            return user.Status;
+        }
         public long Insert(User user)
         {
             db.Users.Add(user);

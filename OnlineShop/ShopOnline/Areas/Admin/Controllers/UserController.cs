@@ -10,10 +10,10 @@ using PagedList;
 
 namespace ShopOnline.Areas.Admin.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         // GET: Admin/User
-        public ActionResult Index(string searchString,int page = 1, int pageSize = 10)
+        public ActionResult Index(string searchString, int page = 1, int pageSize = 10)
         {
             ViewBag.searchString = searchString;
             var dao = new UserDao();
@@ -25,7 +25,7 @@ namespace ShopOnline.Areas.Admin.Controllers
         {
             return View();
         }
-        
+
         [HttpPost]
         public ActionResult Create(User user)
         {
@@ -37,6 +37,7 @@ namespace ShopOnline.Areas.Admin.Controllers
                 long id = dao.Insert(user);
                 if (id > 0)
                 {
+                    SetAlert("Thêm người đùng thành công", "success");
                     return RedirectToAction("Index", "User");
                 }
                 else
@@ -68,6 +69,7 @@ namespace ShopOnline.Areas.Admin.Controllers
                 var result = dao.Update(user);
                 if (result)
                 {
+                    SetAlert("Sửa người đùng thành công", "success");
                     return RedirectToAction("Index", "User");
                 }
 
@@ -89,6 +91,16 @@ namespace ShopOnline.Areas.Admin.Controllers
                 ModelState.AddModelError("", "Cập nhập thất bại");
             }
             return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new UserDao().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
+
         }
     }
 }

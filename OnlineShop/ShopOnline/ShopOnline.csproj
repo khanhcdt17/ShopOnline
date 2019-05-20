@@ -177,7 +177,9 @@
     <Content Include="Assest\Admin\css\timeline.css" />
     <Content Include="Assest\Admin\fonts\fontawesome-webfont.svg" />
     <Content Include="Assest\Admin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assest\Admin\js\AlertMessage.js" />
     <Content Include="Assest\Admin\js\bootstrap.min.js" />
+    <Content Include="Assest\Admin\js\Controller\userController.js" />
     <Content Include="Assest\Admin\js\dataTables\dataTables.bootstrap.min.js" />
     <Content Include="Assest\Admin\js\dataTables\jquery.dataTables.min.js" />
     <Content Include="Assest\Admin\js\flot-data.js" />
